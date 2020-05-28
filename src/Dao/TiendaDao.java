@@ -1,6 +1,5 @@
 package Dao;
 
-import Dto.Servicio;
 import Dto.Tienda;
 import Util.Conexion;
 

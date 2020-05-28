@@ -27,7 +27,7 @@ public class Conexion<T> {
 	
 	public static EntityManager getEm(){
 		if ( em == null ) {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("instagram");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("bd");
             em = emf.createEntityManager();
         }
 		return em;
