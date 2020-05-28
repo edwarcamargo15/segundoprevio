@@ -14,7 +14,7 @@ public class Servicio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	@Lob
@@ -29,12 +29,14 @@ public class Servicio implements Serializable {
 
 	public Servicio() {
 	}
-	
-	public Servicio(String nombre,String descripcion) {
 
-		this.nombre=nombre;
-		this.descripcion=descripcion;
+	
+	public Servicio(String nombre, String descripcion) {
+		
+		this.descripcion = descripcion;
+		this.nombre = nombre;
 	}
+
 
 	public int getId() {
 		return this.id;

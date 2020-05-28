@@ -1,6 +1,8 @@
 package Util;
 
+import Dao.ClienteDao;
 import Dao.TiendaDao;
+import Dto.Cliente;
 import Dto.Tienda;
 
 public class Prueba {
@@ -8,13 +10,13 @@ public class Prueba {
 	public static void main(String[] args) {
 	
 		
-		Tienda ee= new TiendaDao();
-		Tienda e = new Tienda("AUX","A","ASDADA","A@GMAIL.COM","XXXX","EDWAR CAMARGO","EDWAR","AXU.COM","ASDDASDA");
+		TiendaDao ee= new TiendaDao();
+		Tienda e = new Tienda("TIENDA","ASDASD","SDFSDFSDF","ASD@GMAIL.COM","XXXX","EDWAR","EDWAR CAMARGO ","TIENDA.COM","WWW.TIENDA.COM");
 		ee.insert(e);
 		
-		//Controlador c= new Controlador();
+		ClienteDao cc= new ClienteDao();
+		Cliente c= new Cliente();
 		
-		//c.crearTienda("AUX","A","ASDADA","A@GMAIL.COM","XXXX","EDWAR CAMARGO","EDWAR","AXU.COM","ASDDASDA");
 		
 	}
 

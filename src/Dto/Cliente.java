@@ -15,7 +15,7 @@ public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	private String clave;
@@ -30,12 +30,15 @@ public class Cliente implements Serializable {
 
 	public Cliente() {
 	}
+
 	
-	public Cliente(String nombre,String email,String clave) {
-		this.nombre=nombre;
-		this.email=email;
-		this.clave=clave;
+	public Cliente(String nombre,String email, String clave) {
+		
+		this.clave = clave;
+		this.email = email;
+		this.nombre = nombre;
 	}
+
 
 	public int getId() {
 		return this.id;

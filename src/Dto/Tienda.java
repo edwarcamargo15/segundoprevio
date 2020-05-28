@@ -15,7 +15,7 @@ public class Tienda implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	private String clave;
@@ -37,10 +37,6 @@ public class Tienda implements Serializable {
 
 	private String web;
 
-	//bi-directional many-to-one association to Servicio
-	@OneToMany(mappedBy="tiendaBean")
-	private List<Servicio> servicios;
-
 	//bi-directional many-to-many association to Cliente
 	@ManyToMany
 	@JoinTable(
@@ -54,23 +50,26 @@ public class Tienda implements Serializable {
 		)
 	private List<Cliente> clientes;
 
-	public Tienda(String nombre,String lema,String descripcion,String email,String clave,String propietario,String facebook,String web,String imag) {
-		
+	//bi-directional many-to-one association to Servicio
+	@OneToMany(mappedBy="tiendaBean")
+	private List<Servicio> servicios;
+
+	public Tienda() {
+	}
+
+	public Tienda(String nombre,String lema, String descripcion,String email,String clave,String propietario,String face,String web,String img) {
 		this.nombre=nombre;
 		this.lema=lema;
 		this.descripcion=descripcion;
 		this.email=email;
 		this.clave=clave;
 		this.propietario=propietario;
-		this.facebook=facebook;
+		facebook=face;
 		this.web=web;
-		this.imagen=imag;
+		imagen=img;
 		
 		
 	}
-	public Tienda() {
-	}
-
 	public int getId() {
 		return this.id;
 	}
@@ -151,6 +150,14 @@ public class Tienda implements Serializable {
 		this.web = web;
 	}
 
+	public List<Cliente> getClientes() {
+		return this.clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
 	public List<Servicio> getServicios() {
 		return this.servicios;
 	}
@@ -171,14 +178,6 @@ public class Tienda implements Serializable {
 		servicio.setTiendaBean(null);
 
 		return servicio;
-	}
-
-	public List<Cliente> getClientes() {
-		return this.clientes;
-	}
-
-	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
 	}
 
 }
