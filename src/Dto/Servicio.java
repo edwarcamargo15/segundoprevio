@@ -29,6 +29,12 @@ public class Servicio implements Serializable {
 
 	public Servicio() {
 	}
+	
+	public Servicio(String nombre,String descripcion) {
+
+		this.nombre=nombre;
+		this.descripcion=descripcion;
+	}
 
 	public int getId() {
 		return this.id;

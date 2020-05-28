@@ -54,6 +54,20 @@ public class Tienda implements Serializable {
 		)
 	private List<Cliente> clientes;
 
+	public Tienda(String nombre,String lema,String descripcion,String email,String clave,String propietario,String facebook,String web,String imag) {
+		
+		this.nombre=nombre;
+		this.lema=lema;
+		this.descripcion=descripcion;
+		this.email=email;
+		this.clave=clave;
+		this.propietario=propietario;
+		this.facebook=facebook;
+		this.web=web;
+		this.imagen=imag;
+		
+		
+	}
 	public Tienda() {
 	}
 
